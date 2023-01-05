@@ -1,14 +1,14 @@
 package main
 
 import (
-	"example/main/databasePackage"
+	"example/main/initializers"
 	"example/main/models"
 )
 
 func init() {
-	databasePackage.LoadEnvVariables()
-	databasePackage.ConnectToDB()
+	initializers.LoadEnvVariables()
+	initializers.ConnectToDB()
 }
 func main() {
-	databasePackage.DB.AutoMigrate(&models.Post{})
+	initializers.DB.AutoMigrate(&models.Post{})
 }
